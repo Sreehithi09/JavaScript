@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link href="sree.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        Total Price:<p id="totprice">50</p>
+        <button onclick="Dec()">-</button>
+        <input type="text" id="quan" value="1">
+        <button onclick="Inc()">+</button>
+        <script>
+            function Inc(){
+                let ip=document.getElementById("quan").value;
+                ip++;
+                document.getElementById("quan").value=ip;
+                document.getElementById("totprice").innerHTML=ip*50; //it increases the value but not decrease
+            }
+            function Dec(){
+                let ip=document.getElementById("quan").value;
+                if(ip>1){
+                    ip--;
+                    document.getElementById("quan").value=ip;
+                    document.getElementById("totprice").innerHTML=ip*50;
+                }
+            }
+        </script>
+    </body>
+</html>

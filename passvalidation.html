@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <input type="text" id="password" placeholder="Enter password">
+        <div id="in" style="color: red;display:none;">
+            <p id="len">Should be 8 characters</p>
+            <p id="caps">Should have one capital letter</p>
+            <p id="nums">Should have minimum one number</p> 
+        </div>
+        <script>
+            let password=document.getElementById("password");
+            password.addEventListener("input",function(){
+                document.getElementById("in").style="display:block;color:red;";
+                let str=password.value;
+                if(str.length>=8){
+                    document.getElementById("len").style="color:green";
+                }
+                else{
+                    document.getElementById("len").style="color:red";
+                }
+                if(/[A-Z]/.test(str)){
+                    document.getElementById("caps").style="color:green";
+                }
+                else{
+                    document.getElementById("caps").style="color:red";
+                }
+                if((/\d/.test(str))){
+                    document.getElementById("nums").style="color:green";
+                }
+                else{
+                    document.getElementById("nums").style="color:red";
+                }
+            })
+        </script>
+    </body>
+</html>

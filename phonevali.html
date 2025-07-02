@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <input type="text" id="num" placeholder="Enter your number">
+        <p id="msg"></p>
+        <script>
+            let num=document.getElementById("num");
+            num.addEventListener("input",function(){
+                let a= num.value;
+                const mode = /^[0-9]{10}$/
+                if(mode.test(a)){
+                    document.getElementById("msg").innerHTML="Valid phone number";
+                    document.getElementById("msg").style="color:green";
+                }
+                else{
+                    document.getElementById("msg").innerHTML="Invalid phone no";
+                    document.getElementById("msg").style="color:red";
+                }
+            })
+        </script>
+    </body>
+</html>
